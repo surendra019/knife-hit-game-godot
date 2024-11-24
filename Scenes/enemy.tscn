@@ -1,0 +1,27 @@
+[gd_scene load_steps=4 format=3 uid="uid://6i3nr2cc5g81"]
+
+[ext_resource type="Texture2D" uid="uid://tgn2lde7d2hl" path="res://Assets/Play/play_enemy_01.png" id="1_fk2ah"]
+[ext_resource type="Script" path="res://Scripts/enemy.gd" id="1_j5c5m"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_2novv"]
+radius = 142.014
+
+[node name="Enemy" type="RigidBody2D"]
+z_index = 2
+gravity_scale = 0.0
+angular_velocity = 0.349066
+angular_damp_mode = 1
+script = ExtResource("1_j5c5m")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.705, 0.705)
+texture = ExtResource("1_fk2ah")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_2novv")
+
+[node name="Timer" type="Timer" parent="."]
+one_shot = true
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

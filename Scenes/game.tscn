@@ -1,0 +1,55 @@
+[gd_scene load_steps=5 format=3 uid="uid://dapb2h0rjmert"]
+
+[ext_resource type="Script" path="res://Scripts/game.gd" id="1_3bf7g"]
+[ext_resource type="Texture2D" uid="uid://oqmu8gqjnxfc" path="res://Assets/Home/home_background.png" id="1_4fxl5"]
+[ext_resource type="Texture2D" uid="uid://dddj6oq15a8ka" path="res://Assets/GamePlay Screen/settingGreen.png" id="2_x66i1"]
+[ext_resource type="PackedScene" uid="uid://6i3nr2cc5g81" path="res://Scenes/enemy.tscn" id="3_nnapa"]
+
+[node name="Game" type="Control" groups=["game"]]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_3bf7g")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_4fxl5")
+expand_mode = 1
+
+[node name="SettingsBtn" type="TextureButton" parent="."]
+layout_mode = 0
+offset_left = 20.0
+offset_top = 20.0
+offset_right = 83.0
+offset_bottom = 86.0
+texture_normal = ExtResource("2_x66i1")
+ignore_texture_size = true
+stretch_mode = 4
+
+[node name="Enemy" parent="." instance=ExtResource("3_nnapa")]
+position = Vector2(255, 253)
+
+[node name="KnifeSpawnPoint" type="Marker2D" parent="."]
+position = Vector2(257, 755)
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 0
+offset_left = 38.0
+offset_top = 388.0
+offset_right = 78.0
+offset_bottom = 860.0
+metadata/_edit_group_ = true
+
+[node name="KnifeSlotContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+size_flags_vertical = 4
+theme_override_constants/separation = 10
+metadata/_edit_group_ = true

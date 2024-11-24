@@ -1,0 +1,101 @@
+[gd_scene load_steps=8 format=3 uid="uid://cvqwjnwfssu5f"]
+
+[ext_resource type="Texture2D" uid="uid://oqmu8gqjnxfc" path="res://Assets/Home/home_background.png" id="1_0vy83"]
+[ext_resource type="Texture2D" uid="uid://cw7f3ta2yjuu5" path="res://Assets/Home/HomeIcon_Setting.png" id="2_l1hhq"]
+[ext_resource type="FontFile" uid="uid://cqwguk37exg82" path="res://Assets/Font/UTM Swiss 721 Black Condensed.ttf" id="3_etav8"]
+[ext_resource type="Texture2D" uid="uid://dqijagrya1imx" path="res://Assets/Knives/item knife-01.png" id="4_gecsg"]
+[ext_resource type="Texture2D" uid="uid://b5podbqemwv6x" path="res://Assets/Home/home_playIcon.png" id="5_7ikky"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_gimqq"]
+font = ExtResource("3_etav8")
+font_size = 100
+font_color = Color(0.47451, 0.952941, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_pa2r7"]
+font = ExtResource("3_etav8")
+font_size = 100
+font_color = Color(1, 0.662745, 0.117647, 1)
+
+[node name="Home" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_0vy83")
+expand_mode = 1
+
+[node name="SettingsBtn" type="TextureButton" parent="."]
+layout_mode = 0
+offset_left = 20.0
+offset_top = 20.0
+offset_right = 68.0
+offset_bottom = 74.0
+texture_normal = ExtResource("2_l1hhq")
+ignore_texture_size = true
+stretch_mode = 4
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -120.0
+offset_top = 74.0
+offset_right = 126.0
+offset_bottom = 218.0
+grow_horizontal = 2
+text = "KNIFE"
+label_settings = SubResource("LabelSettings_gimqq")
+
+[node name="Label2" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -16.0
+offset_top = 167.0
+offset_right = 230.0
+offset_bottom = 311.0
+grow_horizontal = 2
+text = "HIT"
+label_settings = SubResource("LabelSettings_pa2r7")
+
+[node name="TextureRect3" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -29.0
+offset_top = -91.5
+offset_right = 29.0
+offset_bottom = 151.5
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("4_gecsg")
+
+[node name="PlayBtn" type="TextureButton" parent="."]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -105.0
+offset_top = -272.0
+offset_right = 105.0
+offset_bottom = -186.0
+grow_horizontal = 2
+grow_vertical = 0
+texture_normal = ExtResource("5_7ikky")
